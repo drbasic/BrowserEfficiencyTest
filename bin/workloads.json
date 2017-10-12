@@ -1,0 +1,223 @@
+[
+  {
+        "Name": "hobl2",
+        "Scenarios": [
+            {
+                "ScenarioName": "GmailGoThroughEmails",
+                "Tab": "new",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "BbcNews",
+                "Tab": "new",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "FacebookNewsfeedScroll",
+                "Tab": "new",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "YoutubeWatchVideo",
+                "Tab": "new",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "AmazonSearch",
+                "Tab": "same",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "WikipediaUnitedStates",
+                "Tab": "same",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "GoogleSearch",
+                "Tab": "same",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "EspnHomepage",
+                "Tab": "same",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "TwitterPublic",
+                "Tab": "same",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "InstagramNYPL",
+                "Tab": "same",
+                "Duration": 90
+            },
+            {
+                "ScenarioName": "RedditSurfaceSearch",
+                "Tab": "same",
+                "Duration": 90
+            }
+        ]
+    },
+    {
+    "Name": "representative",
+    "Scenarios": [
+      {
+        "ScenarioName": "GmailGoThroughEmails",
+        "Tab": "new",
+        "Duration": 90
+      },
+
+      {
+        "ScenarioName": "BbcNews",
+        "Tab": "new",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "YahooNews",
+        "Tab": "same",
+        "Duration": 90
+      },
+
+      {
+        "ScenarioName": "YoutubeWatchVideo",
+        "Tab": "new",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "FacebookNewsfeedScroll",
+        "Tab": "same",
+        "Duration": 90
+      },
+
+      {
+        "ScenarioName": "AmazonSearch",
+        "Tab": "new",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "WikipediaUnitedStates",
+        "Tab": "same",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "GoogleSearch",
+        "Tab": "same",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "EspnHomepage",
+        "Tab": "same",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "TwitterPublic",
+        "Tab": "same",
+        "Duration": 90
+      },
+      {
+        "ScenarioName": "InstagramNYPL",
+        "Tab": "same",
+        "Duration": 90
+      }
+    ]
+  },
+
+  {
+    "Name": "heavymultitab",
+    "Scenarios": [
+      {
+        "ScenarioName": "YoutubeWatchVideo",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "BbcNews",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "YahooNews",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "AmazonSearch",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "FacebookNewsfeedScroll",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "GoogleSearch",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "GmailGoThroughEmails",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "WikipediaUnitedStates",
+        "Tab": "new"
+      }
+    ]
+  },
+
+  {
+    "Name": "simple",
+    "Scenarios": [
+      {
+        "ScenarioName": "WikipediaUnitedStates",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "GoogleSearch",
+        "Tab": "new"
+      }
+    ]
+  },
+
+  {
+    "Name": "education",
+    "Scenarios": [
+      {
+        "ScenarioName": "GooglePrimeFactorization",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "YoutubeTrigonometry",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "GmailGoThroughEmails",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "IxlEighthGradeScience",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "ScholasticHarryPotter",
+        "Tab": "same"
+      },
+      {
+        "ScenarioName": "KhanAcademyGrade8Math",
+        "Tab": "same"
+      },
+      {
+        "ScenarioName": "HistoryWWII",
+        "Tab": "new"
+      },
+      {
+        "ScenarioName": "NewselaChineseNewYear",
+        "Tab": "same"
+      },
+      {
+        "ScenarioName": "ColoradoStatesOfMatter",
+        "Tab": "same"
+      },
+      {
+        "ScenarioName": "BrainPopAvalanches",
+        "Tab":  "same"
+      }
+    ]
+  }
+]

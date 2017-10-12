@@ -135,7 +135,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(SolutionDir)\PerfProcessor\$(OutDir)\MeasureSetDefinitionAssets\*.*" "$(TargetDir)\MeasureSetDefinitionAssets\*"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(SolutionDir)\PerfProcessor\$(OutDir)\MeasureSetDefinitionAssets\*.*" "$(TargetDir)\MeasureSetDefinitionAssets\*"
+xcopy /Y "$(SolutionDir)\PerfProcessor\$(OutDir)\MeasureSetDefinitionAssets\*.*" "$(SolutionDir)\bin\MeasureSetDefinitionAssets\*"
+xcopy /Y "$(TargetDir)BrowserEfficiencyTest.exe" "$(SolutionDir)\bin\*"
+xcopy /Y "$(TargetDir)Newtonsoft.Json.*" "$(SolutionDir)\bin\*"
+xcopy /Y "$(TargetDir)WebDriver.*" "$(SolutionDir)\bin\*"
+xcopy /Y "$(TargetDir)WebDriver.Support.*" "$(SolutionDir)\bin\*"
+</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
