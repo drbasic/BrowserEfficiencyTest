@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ElevatorClient">
-      <HintPath>..\..\Elevator\ElevatorClient\bin\Debug\ElevatorClient.dll</HintPath>
+      <HintPath>..\Elevator\ElevatorClient\obj\Debug\ElevatorClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -126,6 +126,12 @@
     <None Include="workloads.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elevator\ElevatorServer\ElevatorServer.csproj">
+      <Project>{53ce5840-916d-42f1-8c6d-c2fceebe3ddc}</Project>
+      <Name>ElevatorServer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
