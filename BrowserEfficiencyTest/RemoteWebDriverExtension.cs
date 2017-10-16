@@ -324,6 +324,10 @@ namespace BrowserEfficiencyTest
                 case "chrome":
                     ChromeOptions option = new ChromeOptions();
                     option.AddUserProfilePreference("profile.default_content_setting_values.notifications", 1);
+                    option.AddArgument("--lang=en");
+                    string chromePathEnv = Environment.GetEnvironmentVariable("CHROME_PATH");
+                    if (chromePathEnv != null)
+                        option.BinaryLocation = chromePathEnv;
                     ChromeDriverService chromeDriverService = ChromeDriverService.CreateDefaultService();
                     if (enableVerboseLogging)
                     {
@@ -336,6 +340,32 @@ namespace BrowserEfficiencyTest
                     }
 
                     driver = new ChromeDriver(chromeDriverService, option);
+                    break;
+                case "yabro":
+                    ChromeOptions ya_option = new ChromeOptions();
+                    ya_option.AddUserProfilePreference("profile.default_content_setting_values.notifications", 1);
+                    ya_option.AddArgument("--lang=en");
+                    ya_option.AddArgument("--no-first-run");
+                    ya_option.AddArgument("--disable-infobars");
+                    ya_option.AddArgument("--enable-automation");
+                    string yaPathEnv = Environment.GetEnvironmentVariable("YB_PATH");
+                    if (yaPathEnv != null)
+                        ya_option.BinaryLocation = yaPathEnv;
+                    else
+                        ya_option.BinaryLocation = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Yandex\YandexBrowser\Application\browser.exe";
+
+                    ChromeDriverService ya_chromeDriverService = ChromeDriverService.CreateDefaultService();
+                    if (enableVerboseLogging)
+                    {
+                        ya_chromeDriverService.EnableVerboseLogging = true;
+                    }
+
+                    if (!string.IsNullOrEmpty(browserProfilePath))
+                    {
+                        ya_option.AddArgument("--user-data-dir=" + browserProfilePath);
+                    }
+
+                    driver = new ChromeDriver(ya_chromeDriverService, ya_option);
                     break;
                 default:
                     EdgeOptions edgeOptions = new EdgeOptions();
