@@ -325,6 +325,7 @@ namespace BrowserEfficiencyTest
                     ChromeOptions option = new ChromeOptions();
                     option.AddUserProfilePreference("profile.default_content_setting_values.notifications", 1);
                     option.AddArgument("--lang=en");
+                    option.AddArgument("--disable-infobars");
                     string chromePathEnv = Environment.GetEnvironmentVariable("CHROME_PATH");
                     if (chromePathEnv != null)
                         option.BinaryLocation = chromePathEnv;
