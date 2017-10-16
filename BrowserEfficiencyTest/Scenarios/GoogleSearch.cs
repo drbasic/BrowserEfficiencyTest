@@ -46,7 +46,7 @@ namespace BrowserEfficiencyTest
             driver.Wait(5);
 
             // Search for "Seattle" and hit enter
-            driver.TypeIntoField(driver.FindElementByXPath("//*[@title='Search']"), "Seattle" + Keys.Enter);
+            driver.TypeIntoField(driver.FindElementByXPath("//*[@id=\"lst-ib\"]"), "Seattle" + Keys.Enter);
 
             // Simply yield control back to the main thread and look at results
         }
