@@ -66,7 +66,7 @@ namespace BrowserEfficiencyTest
             // Compute the CPU usage aggregated by process name.
             var cpuUsageTimeByProcess = from row in rawCpuUsageTimeData
                                         group row by row.ProcessName into g
-                                        select new { ProcessName = g.Key, CpuUsageMilliSec = g.Sum(s => s.CpuUsageInView) };
+                                        select new { ProcessName = g.Key.Trim(), CpuUsageMilliSec = g.Sum(s => s.CpuUsageInView) };
 
             totalCpuTime = cpuUsageTimeByProcess.Sum(s => s.CpuUsageMilliSec);
 
@@ -77,6 +77,16 @@ namespace BrowserEfficiencyTest
             totalCpuUsagePercentage = (double)(cpuUsageTimeNotIdle / totalCpuTime) * 100;
 
             metrics = new Dictionary<string, string>() { { "CPU Total Utilization %", totalCpuUsagePercentage.ToString() } };
+
+            string[] browsers = { "browser.exe", "chrome.exe", "opera.exe" };
+            var cpuUsageTimeByBrowser = from row in cpuUsageTimeByProcess
+                                        where browsers.Contains(row.ProcessName)
+                                        select row;
+            foreach(var row in cpuUsageTimeByBrowser)
+            {
+                var cpuUsagePercentage = (double)(row.CpuUsageMilliSec / totalCpuTime) * 100;
+                metrics.Add(string.Format("CPU {0} Utilization %", row.ProcessName), cpuUsagePercentage.ToString() );
+            }
 
             return metrics;
         }
