@@ -1,4 +1,4 @@
-//--------------------------------------------------------------
+﻿//--------------------------------------------------------------
 //
 // Browser Efficiency Test
 // Copyright(c) Microsoft Corporation
@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium;
 using System;
+using System.Linq;
 
 namespace BrowserEfficiencyTest
 {
@@ -47,7 +48,14 @@ namespace BrowserEfficiencyTest
 
             UserInfo credentials = credentialManager.GetCredentials("facebook.com");
 
-            if (driver.Title == "Log into Facebook | Facebook" || driver.Title == "Facebook - Log In or Sign Up")
+            string[] titles =
+            {
+                "Log into Facebook | Facebook",
+                "Facebook – log in or sign up",
+                "Facebook — войдите или зарегистрируйтесь"
+            };
+
+            if (titles.Contains(driver.Title))
             {
                 Logger.LogWriteLine("    Starting logging into Facebook...");
                 ScenarioEventSourceProvider.EventLog.AccoungLogInStart("Facebook");
@@ -77,7 +85,7 @@ namespace BrowserEfficiencyTest
             }
 
             // Check to makes sure the login was successful
-            if (driver.Title == "Log into Facebook | Facebook" || driver.Title == "Facebook - Log In or Sign Up")
+            if (titles.Contains(driver.Title))
             {
                 throw new Exception("Login to Facebook failed!");
             }
