@@ -84,6 +84,7 @@ namespace BrowserEfficiencyTest
         // executes the wpr.exe commandline with the passed in command line parameters
         private bool RunWpaExporter(string cmdLine, bool ignoreError = false)
         {
+            Console.WriteLine(cmdLine);
             bool isSuccess = false;
             string errorOutput = "";
 

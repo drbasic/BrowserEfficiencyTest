@@ -45,6 +45,7 @@
     <Compile Include="MeasureSets\CpuUsage.cs" />
     <Compile Include="MeasureSets\DiskUsage.cs" />
     <Compile Include="MeasureSets\EnergyVerbose.cs" />
+    <Compile Include="MeasureSets\GpuUsage.cs" />
     <Compile Include="PerfProcessor.cs" />
     <Compile Include="MeasureSet.cs" />
     <Compile Include="MeasureSets\NetworkUsage.cs" />
@@ -65,6 +66,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="MeasureSetDefinitionAssets\DiskUsage.wpaProfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MeasureSetDefinitionAssets\GpuUsage.wpaProfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="MeasureSetDefinitionAssets\NetworkUsage.wpaProfile">
