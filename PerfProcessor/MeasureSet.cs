@@ -127,8 +127,13 @@ namespace BrowserEfficiencyTest
                 etlRawCsvData = GetDataFromFile(wpaExportedDataFile);
 
                 // Only add the raw data to our working dataset if there is actual data.
-                if (etlRawCsvData != null)
+                if (etlRawCsvData == null)
                 {
+                    Console.WriteLine("[{0}] - etlRawCsvData == null in {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), wpaExportedDataFile);
+                }
+                else
+                {
+                    Console.WriteLine("[{0}] - etlRawCsvData != null in {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), wpaExportedDataFile);
                     etlRawCsvDataSet.Add(wpaExportedDataFile, etlRawCsvData);
                 }
 
@@ -185,6 +190,7 @@ namespace BrowserEfficiencyTest
 
             if (!File.Exists(csvFileName))
             {
+                Console.WriteLine("[{0}] - CSV File does not exists {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), csvFileName);
                 return null;
             }
 
@@ -198,6 +204,7 @@ namespace BrowserEfficiencyTest
                     // read the data in from the exported data file
                     while ((line = sr.ReadLine()) != null)
                     {
+                        Console.WriteLine("[{0}] - CSV data row {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), line);
                         csvData.Add(line);
                     }
                 }
